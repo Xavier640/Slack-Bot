@@ -15,7 +15,7 @@ app.command("/balkan-guy-ping", async ({ command, ack, respond }) => {
   const latency = Date.now() - start;
   await respond({ text: `Pong!\nLatency: ${latency}ms` });
 });
-app.command("/nice-balkan-guy-catfact", async ({ ack, respond }) => {
+app.command("/balkan-guy-catfact", async ({ ack, respond }) => {
   await ack();
 
   try {
@@ -25,7 +25,7 @@ app.command("/nice-balkan-guy-catfact", async ({ ack, respond }) => {
     await respond({ text: "Failed to fetch a cat fact." });
   }
 });
-app.command("/nice-balkan-guy-time", async ({command, ack, respond}) => {
+app.command("/balkan-guy-time", async ({command, ack, respond}) => {
   await ack();
   const currentTime = new Date().toLocaleString();
   await respond({ text: `Current Time:\n${currentTime}` });
