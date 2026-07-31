@@ -25,6 +25,11 @@ app.command("/nice-balkan-guy-catfact", async ({ ack, respond }) => {
     await respond({ text: "Failed to fetch a cat fact." });
   }
 });
+app.command("/nice-balkan-guy-time", async ({command, ack, respond}) => {
+  await ack();
+  const currentTime = new Date().toLocaleString();
+  await respond({ text: `Current Time:\n${currentTime}` });
+});
 
 (async () => {
   await app.start();
