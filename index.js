@@ -2,14 +2,12 @@ require("dotenv").config();
 const axios = require("axios");
 const { App } = require("@slack/bolt");
 
-// 1. Inițializarea unică a robotului de Slack (folosim 'app')
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   appToken: process.env.SLACK_APP_TOKEN,
   socketMode: true
 });
 
-// 2. Ascultătorul de evenimente (răspunde când primește tag: @NumeBot)
 app.event('app_mention', async ({ event, say }) => {
   try {
     await say(`Salut <@${event.user}>! Te aud clar din comanda integrată.`);
@@ -18,7 +16,6 @@ app.event('app_mention', async ({ event, say }) => {
   }
 });
 
-// 3. Comenzile tale existente (/slash commands)
 app.command("/balkan-guy-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
@@ -42,9 +39,12 @@ app.command("/balkan-guy-time", async ({ command, ack, respond }) => {
   await respond({ text: `Current Time:\n${currentTime}` });
 });
 
-// 4. Pornirea unică a robotului
 (async () => {
   try {
+    console.log("🔍 Verificare .env pe server:");
+    console.log("BOT TOKEN EXISTĂ?:", !!process.env.SLACK_BOT_TOKEN);
+    console.log("APP TOKEN EXISTĂ?:", !!process.env.SLACK_APP_TOKEN);
+
     await app.start();
     console.log("⚡️ Bot is running in Socket Mode!");
   } catch (error) {
