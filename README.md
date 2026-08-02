@@ -7,6 +7,6 @@ Try it yourself in the #bot-spam channel from the Hack Club workspace!
 https://hackclub.enterprise.slack.com/archives/C0P5NE354
 
 Currently, these are the only avalabile commands:
-/balkan-guy-ping
-/balkan-guy-catfact
+/balkan-guy-ping,
+/balkan-guy-catfact and
 /balkan-guy-time
