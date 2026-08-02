@@ -5,3 +5,8 @@ This is my stardance project for the "Slack Bot" mission! I made an slack bot us
 
 Try it yourself in the #bot-spam channel from the Hack Club workspace!
 https://hackclub.enterprise.slack.com/archives/C0P5NE354
+
+Currently, these are the only avalabile commands:
+/balkan-guy-ping
+/balkan-guy-catfact
+/balkan-guy-time
